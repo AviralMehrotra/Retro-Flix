@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Retro Flix React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Retro Flix is a simple React application that allows you to search for movies and add them to your watched list. You can also rate the movies you've watched and see statistics about your watched movies.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To get started with Retro Flix, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository to your local machine:
 
-### `npm test`
+   ```shell
+   git clone https://github.com/yourusername/retro-flix.git
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Change into the project directory:
 
-### `npm run build`
+   ```shell
+   cd retro-flix
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install the required dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```shell
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Get an API key from [OMDb API](http://www.omdbapi.com/apikey.aspx) and replace `"YOUR_API_KEY"` in `App.js` with your actual API key.
 
-### `npm run eject`
+5. Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```shell
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to use Retro Flix.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Search for movies by title.
+- View movie details, including title, year, poster, runtime, IMDb rating, plot, and more.
+- Add movies to your watched list and rate them.
+- View statistics about your watched movies, including average IMDb rating, average user rating, and average runtime.
+- Remove movies from your watched list.
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Once you have the Retro Flix application up and running, you can perform the following actions:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Search for Movies
 
-### Code Splitting
+1. Use the search input at the top to enter the title of the movie you want to search for.
+2. As you type, the search results will be displayed below.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### View Movie Details
 
-### Analyzing the Bundle Size
+1. Click on a movie from the search results to view its details.
+2. You can see information such as the movie's title, year, poster, runtime, IMDb rating, and plot.
+3. Rate the movie using the star rating system if it's a movie you've watched.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Add Movies to Watched List
 
-### Making a Progressive Web App
+1. When viewing the details of a movie, you can click the "+ Add to List" button to add it to your watched list.
+2. Rate the movie using the star rating system.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### View Watched Movies
 
-### Advanced Configuration
+1. Click on the "Watched" tab to view your watched movies.
+2. You can see a summary of your watched movies, including the number of movies, average IMDb rating, average user rating, and average runtime.
+3. Click on a watched movie to see its details, or remove it from your watched list.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions to Retro Flix are welcome! If you find a bug or have an idea for an enhancement, please open an issue or create a pull request on the [GitHub repository](https://github.com/yourusername/retro-flix).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
