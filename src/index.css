@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --color-primary: #6741d9;
   --color-primary-light: #7950f2;
   --color-text: #dee2e6;
@@ -6,6 +6,17 @@
   --color-background-100: #343a40;
   --color-background-500: #2b3035;
   --color-background-900: #212529;
+  --color-red: #fa5252;
+  --color-red-dark: #e03131;
+} */
+:root {
+  --color-primary: #1d3461;
+  --color-primary-light: #014f86;
+  --color-text: #dfe7fd;
+  --color-text-dark: #e7ecef;
+  --color-background-500: #1d3461;
+  --color-background-900: #dbe9ee;
+  --color-background-100: #1f487e;
   --color-red: #fa5252;
   --color-red-dark: #e03131;
 }
@@ -58,12 +69,132 @@ body {
   position: relative;
 }
 
-.loader {
+.box::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-background-500);
+  border-radius: 10px;
+}
+
+.box::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--color-background-500);
+}
+
+.box::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--color-background-100);
+}
+
+.box:hover::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-light);
+}
+
+/* .loader {
   text-align: center;
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 600;
   margin: 4.8rem;
+} */
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: var(--color-text);
+  position: absolute;
+  top: 45%;
+  left: 43%;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: var(--color-red-dark);
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+
+.dot-animation {
+  animation: loading 1.5s infinite;
+  opacity: 0;
+  display: inline-block;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .error {
@@ -82,6 +213,7 @@ body {
 
 .logo span {
   font-size: 3.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .logo h1 {
@@ -98,7 +230,7 @@ body {
   border-radius: 0.7rem;
   width: 40rem;
   transition: all 0.3s;
-  color: var(--color-text);
+  color: var(--color-text-dark);
 
   /* background-color: var(--color-background-900); */
   background-color: var(--color-primary-light);
@@ -128,8 +260,8 @@ body {
   border-radius: 50%;
   border: none;
   background-color: var(--color-background-900);
-  color: var(--color-text);
-  font-size: 1.4rem;
+  color: var(--color-primary);
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   z-index: 999;
@@ -190,15 +322,14 @@ body {
 
 .btn-delete {
   position: absolute;
-  right: 2.4rem;
-
+  right: 2.6rem;
   height: 1.8rem;
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
   background-color: var(--color-red);
   color: var(--color-background-900);
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
@@ -270,7 +401,7 @@ body {
 }
 
 .details-overview h2 {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   margin-bottom: 0.4rem;
   line-height: 1.1;
 }
@@ -327,7 +458,7 @@ body {
   border-radius: 50%;
   border: none;
   /* background-color: var(--color-text); */
-  background-color: #fff;
+  background-color: var(--color-background-900);
   color: var(--color-background-500);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
   font-family: sans-serif;
@@ -338,6 +469,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  border-radius: 10%;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 2.5px;
+  margin-top: 1px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 /*
