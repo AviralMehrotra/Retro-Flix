@@ -76,8 +76,8 @@ body {
 }
 
 .box::-webkit-scrollbar {
-  width: 10px;
-  background-color: var(--color-background-500);
+  width: 13px;
+  background-color: transparent;
 }
 
 .box::-webkit-scrollbar-thumb {
