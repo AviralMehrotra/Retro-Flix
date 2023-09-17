@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/retro-flix/static/css/main.725039cb.css",
+    "main.js": "/retro-flix/static/js/main.882b8109.js",
+    "index.html": "/retro-flix/index.html",
+    "main.725039cb.css.map": "/retro-flix/static/css/main.725039cb.css.map",
+    "main.882b8109.js.map": "/retro-flix/static/js/main.882b8109.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.725039cb.css",
+    "static/js/main.882b8109.js"
+  ]
+}
